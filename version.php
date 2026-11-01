@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_scormcompress';
-$plugin->version   = 2026101501;          // YYYYMMDDXX - bump on every release.
+$plugin->version   = 2026110200;          // YYYYMMDDXX - bump on every release.
 $plugin->requires  = 2022112800;          // Moodle 4.1 LTS minimum.
 $plugin->supported = [401, 500];          // Supported from branch 4.1 to 5.0.
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '1.0.2';
+$plugin->release   = '1.0.3';

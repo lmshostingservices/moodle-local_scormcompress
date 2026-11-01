@@ -32,6 +32,12 @@ if ($hassiteconfig) {
     $settings = new admin_settingpage('local_scormcompress', new lang_string('settings', 'local_scormcompress'));
 
     if ($ADMIN->fulltree) {
+        // Detecting tools runs external version commands. Avoid doing that while Moodle
+        // builds the settings tree for unrelated administration pages.
+        $toolstatus = '';
+        if (optional_param('section', '', PARAM_ALPHAEXT) === 'local_scormcompress') {
+            $toolstatus = \local_scormcompress\local\binaries::status_html();
+        }
 
         // Master switch.
         $settings->add(new admin_setting_heading(
@@ -65,7 +71,7 @@ if ($hassiteconfig) {
         $settings->add(new admin_setting_heading(
             'local_scormcompress/toolstatusheading',
             new lang_string('toolstatus', 'local_scormcompress'),
-            \local_scormcompress\local\binaries::status_html()
+            $toolstatus
         ));
 
         // Image compression.

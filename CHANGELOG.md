@@ -2,6 +2,10 @@
 
 All notable changes to local_scormcompress are documented in this file.
 
+## 1.0.3 (2026-11-02)
+
+- Defer external-tool detection and version probes until the SCORM Compress settings page is opened.
+
 ## 1.0.2 (2026-10-15)
 
 - Restore exact-artifact release evidence with a new immutable release identity.
